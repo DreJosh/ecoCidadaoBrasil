@@ -12,82 +12,124 @@ class contato extends CI_Controller
 
 	public function enviarEmail()
 	{
-		$var = $this->input->post();
+		$var = array($this->input->post());
 
-		$email = $var['email'];
-		$assunto = $var['assunto'];
-		$mensagem = $var['mensagem'];
-		$telefone = $var['telefone'];
-		$nome = $var['nome'];
-		$data = $var['data'];
+		$email = $var[0]['email'];
+		$assunto = $var[0]['assunto'];
+		$mensagem = $var[0]['mensagem'];
+		$telefone = $var[0]['telefone'];
+		$nome = $var[0]['nome'];
+		$data = $var[0]['data'];
 		$this->load->library('phpmailer_lib');
 
-
-		// FUNÇÃO PARA CARREGAR AS CONFIGURAÇÕES DO E-MAIL
 		$mail = $this->phpmailer_lib->load();
+		$mail->ClearAddresses();
+		$mail->clearAttachments();
 
-		// CONFIGURAÇÃO SMTP
 		$mail->isSMTP();
-		$mail->SMTPDebug = 0;        // DEBUGAR: 1 = ERROS E MENSAGENS, 2 = MENSAGENS APENAS
-		$mail->Host = 'smtp.office365.com';
+		$mail->SMTPDebug = 0;
+		$mail->Host      = 'smtp-mail.outlook.com';
 		$mail->SMTPAuth = true;
 		$mail->Username = 'ecocidadaobrasil@outlook.com';
 		$mail->Password = 'Grupo042020';
 		$mail->SMTPSecure = 'tls';
-		$mail->Port     = 587;
+		$mail->PORT = 587;
 
-		// E-MAIL RESPONSÁVEL
 		$mail->setFrom('ecocidadaobrasil@outlook.com', 'Mail');
-
-		// ADICIONAR UM DESTINATÁRIO
-		$mail->addAddress('andre.ferreira@cinpal.com', 'Mail');
-
-		// ASSUNTO DO E-MAIL
-		$mail->Subject = utf8_decode('Eco Cidadão Brasil');
-
-		// DEFINA O FORMATO DO E-MAIL PARA HTML
+		$mail->addAddress('andre.ferreira@cinpal.com', 'SD001');
+		$mail->Subjet = $assunto;
 		$mail->isHTML(true);
+
 		$mailContent = '<!DOCTYPE html>
 		<html lang="pt-br">
 		
 		<head>
-			<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>layout email</title>
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-				integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+			<meta http-equiv="Content-Type" content="text/html; charset=" utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+			<style type="text/css">
+		
+			</style>
 		</head>
 		
-		<body>
-			<div class="container-fluid mt-5">
-				<div class="card border border-success">
-					<div class="card-header bg-success text-white">
-						<h3>Comunicado sobre o meio ambiente.</h3>
-					</div>
-					<div class="card-body">
-						Boa tarde, sou <b>' . $nome . '</b><br />
-						No dia <b>' . $data . '</b><br />
-						<pre>' . $mensagem . '</pre><br />
-						E-mail: <b>' . $email . '</b> - Telefone: <b>' . $telefone . '</b><br />
-					</div>
-				</div>
-			</div>
-			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-				integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-				crossorigin="anonymous"></script>
+		<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+			<center>
+				<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+					<tr>
+						<td align="center" valign="top" id="bodyCell">
+							<table border="0" cellpadding="0" cellspacing="0" id="templateContainer">
+								<tr>
+									<td align="center" valign="top">
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader">
+											<tr>
+												<td valign="top" class="headerContent">
+													<h1></h1>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td align="center" valign="top">
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody">
+											<tr>
+												<td valign="top" class="bodyContent">
+													<!-- message header end -->
+													<table
+														style="font-family: Verdana, sans-serif; font-size: 14px; color: #000000; text-decoration: none; width: 596px;"
+														border="0" cellspacing="0" cellpadding="8">
+														<tbody>
+															<tr>
+																<td width="657">
+																	<p style="text-align: left;">
+																	<table style="border: 2px solid rgb(0, 51, 0); width: 100%;"
+																		border="0" cellspacing="5" cellpadding="5"
+																		align="center">
+																		<tbody>
+																			<tr class="tabela">
+																				<td
+																					style="background-color: rgb(0, 102, 0); color: white; padding-left: 15px;">
+																					<strong>Comunicado sobre o meio
+																						ambiente.</strong>
+																				</td>
+																			</tr>
+																			<tr class="tabela">
+																				<td>Boa tarde, sou ' . $nome . '<br />
+																					No dia ' . $data . '<br />
+																					' . $mensagem . '<br />
+																					E-mail: ' . $email . ' - Telefone: ' . $telefone . '
+																				</td>
+																			</tr>
+																			<tr style="border:white;"></tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</center>
 		</body>
 		
 		</html>';
+		$mail->Body = $mailContent;
 
-		$mail->Body = utf8_decode($mailContent);
-
-		// ENVIO DO E-MAIL
 		if (!$mail->send()) {
-			echo 'Message could not be sent.';
-			echo 'Mailer Error: ' . $mail->ErrorInfo;
+			echo 'Mensagem não enviada</br>';
+			echo 'Erro: ' . $mail->ErrorInfo;
 		} else {
-			echo '1';
+			$msg =  array(
+				"cod" => 1,
+				"mensagens" => "Email enviado com sucesso"
+			);
+			echo json_encode($msg);
 		}
-		exit;
 	}
 }

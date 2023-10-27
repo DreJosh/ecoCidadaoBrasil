@@ -23,13 +23,12 @@
 					</div>
 					<div class="form-group col-sm-12 col-md-6 ">
 						<label for="inpImagem">Data do ocorrido:</label>
-						<input type="datetime-local" class="form-control" id="inpData" name="inpData">
+						<input type="date" class="form-control" id="inpData" name="inpData">
 					</div>
 					<div class="form-group col-12">
 						<label for="Assunto">Assunto:</label>
 						<input type="text" id="Assunto" name="Assunto" class="form-control">
-					</div>
-					<div class="form-group col-12">
+					</div><div class="form-group col-12">
 						<label for="tarMensagem">Mensagem</label>
 						<textarea class="form-control" id="tarMensagem" name="tarMensagem" maxlength="5000" rows="7"></textarea>
 						<small id="helpMensagem" class="form-text text-warning">Se por um acaso quiser mandar uma imagem, favor mandar em um link.</small>
@@ -92,7 +91,7 @@
 			dataType: "json",
 			error: function(retorno) {
 				console.log(retorno);
-				alert("Erro ao enviar!!");
+				console.log("Erro ao enviar!!");
 			},
 			beforeSend: function() {
 				console.log('Carregando...')
