@@ -1,73 +1,79 @@
+### PROJETO ECO CIDADÃO
+
 ###################
-What is CodeIgniter
+O sistema criado
+###################
+Sistema utilizado para criação de um formulário de reclamações no meio ambiente.
+Foi utilizado Javascript, PHP (codeigniter) e linguagens de estrutura.
+
+###################
+O que é CodeIgniter
 ###################
 
 Projeto criado para iniciar estudos em Codeigniter
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+CodeIgniter é um Framework de Desenvolvimento de Aplicativos - um kit de ferramentas - para pessoas
+que constroem sites usando PHP. Seu objetivo é permitir que você desenvolva projetos
+muito mais rápido do que você poderia escrever código do zero, fornecendo
+um rico conjunto de bibliotecas para tarefas comumente necessárias, bem como um simples
+interface e estrutura lógica para acessar essas bibliotecas. CodeIgniter permite
+você se concentra criativamente em seu projeto, minimizando a quantidade de código necessária
+para uma determinada tarefa.
 
 *******************
-Release Information
+Liberar informações
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+Este repositório contém código em desenvolvimento para versões futuras. Para baixar o
+versão estável mais recente, visite `Downloads do CodeIgniter
+<https://codeigniter.com/download>`_página.
 
 **************************
-Changelog and New Features
+Log de alterações e novos recursos
 **************************
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+Você pode encontrar uma lista de todas as alterações para cada versão na seção `user`
+log de alterações do guia <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
 
 *******************
-Server Requirements
+Requisitos do servidor
 *******************
 
-PHP version 5.6 or newer is recommended.
+Recomenda-se PHP versão 5.6 ou mais recente.
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+Deve funcionar também no 5.3.7, mas recomendamos fortemente que você NÃO execute
+versões antigas do PHP, devido ao potencial de segurança e desempenho
+problemas, bem como recursos ausentes.
 
 ************
-Installation
+Instalação
 ************
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+Por favor, consulte a `seção de instalação <https://codeigniter.com/user_guide/installation/index.html>`_
+do Guia do Usuário do CodeIgniter.
 
 *******
-License
+Licença
 *******
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+Por favor, veja a `licença acordo <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
 
 *********
-Resources
+Recursos
 *********
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+- `Guia do usuário <https://codeigniter.com/docs>`_
+- `Traduções de arquivos de idioma <https://github.com/bcit-ci/codeigniter3-translations>`_
+- `Fóruns da comunidade <http://forum.codeigniter.com/>`_
+- `Wiki da comunidade <https://github.com/bcit-ci/CodeIgniter/wiki>`_
+- `Canal da comunidade no Slack <https://codeigniterchat.slack.com>`_
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+Relate problemas de segurança ao nosso `Painel de Segurança <mailto:security@codeigniter.com>`_
+ou através de nossa `página no HackerOne` <https://hackerone.com/codeigniter>`_, obrigado.
 
 ***************
-Acknowledgement
+Reconhecimento
 ***************
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
-
+A equipe do CodeIgniter gostaria de agradecer ao EllisLab, a todos os
+colaboradores do projeto CodeIgniter e você, usuário do CodeIgniter.
